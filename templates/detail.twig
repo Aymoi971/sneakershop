@@ -1,0 +1,32 @@
+{% extends 'frame.twig'%}
+
+{# {% block page-title %}{{shoe.name}}{% endblock %} #}
+{% block Main %}
+
+<div class="full-mod background"></div>
+    {% include "image-panel.twig" with {"src": shoe.img, "otherclass":"full-mod","addnav_true": true } %}
+    <div id="Main">
+        {% include "image-panel.twig" with {"src": shoe.img,"otherclass":"","addnav_true": false} %}
+        <div id="Text">
+            <h6>SNEAKER COMPANY</h6>
+            <h1 data-id="1">{{shoe.name}}</h1>
+            <p>{{shoe.descript}}</p>
+            <div id="price">$<h3>{{shoe.price * shoe.discount}}</h3> <h5>{{(shoe.discount * 100)~"%"}}</h5> </div>
+            <h5>{{"$" ~ shoe.price}}</h5>
+            <div id="Order-bar">
+                <div id ="Counter">
+                    <input class="operator " type="button" value=" - ">
+                    <span>0</span>
+                    <input class="operator" type="button" value=" + ">
+                </div>
+                <a class="button" href="#">
+                    <span id="Addbttn" class="button">
+                        <img src="images/icon-cart-white.svg" alt="">
+                        <h5>Add to cart</h5>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

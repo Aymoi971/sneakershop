@@ -1,0 +1,18 @@
+
+    <div class="{{"image-panel " ~ otherclass}}">
+        <div class="panel-main">
+            <img src= {{src ~ "-" ~ 1 ~ ".jpg"}}>
+            {% if addnav_true %}
+                <img class="navigation" id="x-out" src="Assets/icon-close.svg" alt="">
+                <span  class="navigation arrow" id="left"><img src="Assets/icon-previous.svg" alt="" data-increment="-1"></span>
+                <span  class="navigation arrow" id="right"><img src="Assets/icon-next.svg" alt="" data-increment="1"></span>
+            {% endif %}
+        </div>
+        <div class="bar">
+            {% for i in 1..4 %}
+                <img src= {{src ~ "-" ~ i ~ ".jpg"}}>
+                {# <input type="radio" class= "thumbnail" name="thumbs" id="thumb-1" data-src={{src ~ "-" ~ i ~ ".jpg"}} content= url({{src ~ "-" ~ i ~ ".jpg"}})> #}
+            {% endfor %}
+        </div>
+    </div>
+    
